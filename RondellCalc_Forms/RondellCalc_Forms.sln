@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RondellCalc_Forms", "RondellCalc_Forms\RondellCalc_Forms.csproj", "{AA8FEE5E-031C-4B42-AEEB-DE33F16B5BA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RondellCalc_Test", "RondellCalc_Test\RondellCalc_Test.csproj", "{609203D7-B360-47D3-8056-A73FD5C07CFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA8FEE5E-031C-4B42-AEEB-DE33F16B5BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8FEE5E-031C-4B42-AEEB-DE33F16B5BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8FEE5E-031C-4B42-AEEB-DE33F16B5BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8FEE5E-031C-4B42-AEEB-DE33F16B5BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609203D7-B360-47D3-8056-A73FD5C07CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609203D7-B360-47D3-8056-A73FD5C07CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609203D7-B360-47D3-8056-A73FD5C07CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609203D7-B360-47D3-8056-A73FD5C07CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CCF6C1E-A0E3-4393-A4C5-7AFCDFD83105}
+	EndGlobalSection
+EndGlobal
