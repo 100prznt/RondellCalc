@@ -11,6 +11,14 @@ namespace RondellCalc_Forms
 {
     public class Controller : INotifyPropertyChanged
     {
+        #region Constants
+        /// <summary>
+        /// Dichte von Beton
+        /// </summary>
+        const double CONCRETE_DENSITY = 1920;
+
+        #endregion Constants
+
         #region Member
 
 
@@ -40,15 +48,29 @@ namespace RondellCalc_Forms
 
         public Rondell Calc()
         {
-            RondellMin = new Rondell() { StoneLength = Input.StoneLengthA };
-            RondellMax = new Rondell() { StoneLength = Input.StoneLengthA };
+            RondellMin = new Rondell() { StoneLengthA = Input.StoneLengthA, StoneLengthB = Input.StoneLengthB, ConcreteWidth = Input.ConcreteWidth };
+            RondellMax = new Rondell() { StoneLengthA = Input.StoneLengthA, StoneLengthB = Input.StoneLengthB, ConcreteWidth = Input.ConcreteWidth };
 
-            double stoneCountPrecise = Input.ScopeLength / Input.StoneLengthA;
+            double stoneCountPrecise = Input.ScopeLength / Input.StoneLengthA * 100; //cm -> m
 
             RondellMin.StoneCount = (int)Math.Floor(stoneCountPrecise);
             RondellMax.StoneCount = (int)Math.Ceiling(stoneCountPrecise);
 
             return RondellMax;
+        }
+
+        /// <summary>
+        /// Berechnet die anzahl benötigter Betonsäcke
+        /// </summary>
+        /// <param name="volumen">Volumen des fertigen Betons [m³]</param>
+        /// <param name="packWeight">Trockenbeton Sackinhalt [kg]</param>
+        /// <returns>Anzahl benötigert Säcke</returns>
+        public int CalcConcretePacks(double volumen, double packWeight)
+        {
+            double weight = volumen * CONCRETE_DENSITY;
+            double packsPrecise = weight / packWeight;
+
+            return (int)Math.Ceiling(packsPrecise);
         }
 
         #endregion Services
@@ -89,6 +111,7 @@ namespace RondellCalc_Forms
         public double OuterDiameter;
         public double StoneLengthA;
         public double StoneLengthB;
+        public double ConcreteWidth;
 
         public double ScopeLength
         {

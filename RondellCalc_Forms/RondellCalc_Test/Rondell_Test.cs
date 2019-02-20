@@ -10,7 +10,9 @@ namespace RondellCalc_Test
         Rondell m_TestObj = new Rondell()
         {
             StoneCount = 16,
-            StoneLength = 0.4
+            StoneLengthA = 40,
+            StoneLengthB = 40,
+            ConcreteWidth = 10
         };
 
         [TestMethod]
@@ -45,6 +47,27 @@ namespace RondellCalc_Test
         {
             //Referenzergebnis von: HP Prime Graphing Calculator
             Assert.AreEqual(1.931370849898, m_TestObj.MinDiameter, 1e-9);
+        }
+
+        [TestMethod]
+        public void SingleStoneArea()
+        {
+            //Referenzergebnis von: HP Prime Graphing Calculator
+            Assert.AreEqual(0.12686291501, m_TestObj.SingleStoneArea, 1e-9);
+        }
+
+        [TestMethod]
+        public void StoneArea()
+        {
+            //Referenzergebnis von: HP Prime Graphing Calculator
+            Assert.AreEqual(2.02980664016, m_TestObj.StoneArea, 1e-9);
+        }
+
+        [TestMethod]
+        public void ConcreteVolume()
+        {
+            //Referenzergebnis von: HP Prime Graphing Calculator
+            Assert.AreEqual(0.202980664016, m_TestObj.ConcreteVolume, 1e-9);
         }
     }
 }
