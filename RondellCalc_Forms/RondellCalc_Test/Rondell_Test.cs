@@ -50,6 +50,13 @@ namespace RondellCalc_Test
         }
 
         [TestMethod]
+        public void StoneLengthAInner()
+        {
+            //Referenzergebnis von: HP Prime Graphing Calculator
+            Assert.AreEqual(23.4314575051, m_TestObj.StoneLengthAInner, 1e-9);
+        }
+
+        [TestMethod]
         public void SingleStoneArea()
         {
             //Referenzergebnis von: HP Prime Graphing Calculator

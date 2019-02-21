@@ -71,6 +71,10 @@ namespace RondellCalc_Forms
             txt_SegmentAngle.Text = result.SegmentAngle.ToString("f2");
 
             txt_ConcreteVolumen.Text =  (result.ConcreteVolume > 0) ? result.ConcreteVolume.ToString("f3") : "";
+
+            var sketch = new StoneSkatch(result);
+            
+            pic_Sketch.Image = sketch.DrawSketch(400);
         }
     }
 }

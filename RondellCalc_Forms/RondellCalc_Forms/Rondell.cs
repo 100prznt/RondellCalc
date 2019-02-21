@@ -77,6 +77,18 @@ namespace RondellCalc_Forms
         }
 
         /// <summary>
+        /// Innere Steinkantenlänge nach Zuschnitt in cm
+        /// </summary>
+        public double StoneLengthAInner
+        {
+            get
+            {
+                var x = Math.Sin(SegmentAngle.ToRadian()) * m_RadialLenghtInM / Math.Sin((90 - SegmentAngle).ToRadian());
+                return (m_TangentialLenghtInM - x) * 100;
+            }
+        }
+
+        /// <summary>
         /// Maximaler Radius in Metern (gemessen an den äußeren Steinecken)
         /// </summary>
         public double MaxRadius
@@ -126,9 +138,8 @@ namespace RondellCalc_Forms
         {
             get
             {
-                var x = Math.Sin(SegmentAngle.ToRadian()) * m_RadialLenghtInM / Math.Sin((90 - SegmentAngle).ToRadian());
-                var a1 = (m_TangentialLenghtInM - x) * m_RadialLenghtInM;
-                var a2 = x * m_RadialLenghtInM / 2;
+                var a1 = (StoneLengthAInner / 100) * m_RadialLenghtInM;
+                var a2 = (m_TangentialLenghtInM - StoneLengthAInner / 100) * m_RadialLenghtInM / 2;
 
                 return a1 + a2;
             }
