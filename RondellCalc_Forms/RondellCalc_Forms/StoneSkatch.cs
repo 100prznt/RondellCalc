@@ -53,8 +53,8 @@ namespace RondellCalc_Forms
             else
                 scaling = (widthAndHeight * SKETCH_SIZE_FACTOR) / Rondell.StoneLengthB;
 
-            int x1 = (int)(widthAndHeight * (1 - SKETCH_SIZE_FACTOR) / 2);
-            int y1 = (int)(widthAndHeight * (SKETCH_SIZE_FACTOR + (1 - SKETCH_SIZE_FACTOR) / 2));
+            int xStart = (int)(widthAndHeight * (1 - SKETCH_SIZE_FACTOR) / 2);
+            int yStart = (int)(widthAndHeight * (SKETCH_SIZE_FACTOR + (1 - SKETCH_SIZE_FACTOR) / 2));
 
             var bmp = new Bitmap(widthAndHeight, widthAndHeight);
 
@@ -63,10 +63,10 @@ namespace RondellCalc_Forms
                 graphics.FillRectangle(new SolidBrush(Color.White), 0, 0, widthAndHeight, widthAndHeight);
 
                 var p = new List<Point>();
-                p.Add(new Point(x1, y1));
-                p.Add(new Point(x1 + (int)(Rondell.StoneLengthA * scaling), y1));
-                p.Add(new Point(x1 + (int)(Rondell.StoneLengthA * scaling), y1 - (int)(Rondell.StoneLengthAInner * scaling)));
-                p.Add(new Point(x1, y1 - (int)(Rondell.StoneLengthB * scaling)));
+                p.Add(new Point(xStart, yStart));
+                p.Add(new Point(xStart + (int)(Rondell.StoneLengthA * scaling), yStart));
+                p.Add(new Point(xStart + (int)(Rondell.StoneLengthA * scaling), yStart - (int)(Rondell.StoneLengthAInner * scaling)));
+                p.Add(new Point(xStart, yStart - (int)(Rondell.StoneLengthB * scaling)));
 
                 Pen blackPen = new Pen(Color.Black, 1);
                 graphics.DrawPolygon(blackPen, p.ToArray());
